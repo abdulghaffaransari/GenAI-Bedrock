@@ -97,7 +97,7 @@ def get_response_llm(llm, vectorstore_faiss, query):
 # Streamlit App
 def main():
     st.set_page_config("RAG Demo")
-    st.header("End-to-End RAG Application")
+    st.header("RAG-Driven RainAI")
     user_question = st.text_input("Ask a Question from the PDF Files")
 
     with st.sidebar:
