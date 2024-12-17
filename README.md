@@ -99,7 +99,7 @@ This project leverages cutting-edge tools and frameworks to provide an efficient
 ## **How to Use**  
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/RAG-Driven-RainAI.git
+   git clone https://github.com/abdulghaffaransari/RAG-Driven-RainAI.git
    cd RAG-Driven-RainAI
    ```
 
@@ -127,18 +127,10 @@ This project leverages cutting-edge tools and frameworks to provide an efficient
    - **MSE**: 0.1263  
    - **RMSE**: 0.3554  
 
-- **RAG Outputs**:  
-   - Fast and accurate answers to user questions from document context.  
-   - Handles large PDF files and complex queries seamlessly.
+### **Visual Representation of Results**  
+Below is a visualization of the results obtained from the rainfall prediction model:  
 
----
-
-## **Screenshots**  
-
-
-### **2. Predicted Results**  
-- Outputs predictions for rainfall amounts.  
-- Provides detailed responses for document-based queries.
+![Predicted Results](https://github.com/abdulghaffaransari/RAG-Driven-RainAI/blob/main/Results/result%201.png)
 
 ---
 
@@ -165,8 +157,8 @@ This project leverages cutting-edge tools and frameworks to provide an efficient
 
 **Contact Information**:  
 - **Email**: abdulghaffaransari9@gmail.com  
-- **LinkedIn**: [https://www.linkedin.com/in/abdulghaffaransari/](#)  
-- **GitHub**: [https://github.com/abdulghaffaransari](#)  
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/abdulghaffaransari/)  
+- **GitHub**: [GitHub](https://github.com/abdulghaffaransari)  
 
 ---
 
@@ -175,4 +167,12 @@ This project leverages cutting-edge tools and frameworks to provide an efficient
 
 ---
 
-With this impressive technical solution, **RAG-Driven RainAI** is ready for deployment and scaling into production environments. I look forward to bringing my expertise to an organization that values cutting-edge innovation. 🚀
+With this impressive technical solution, **RAG-Driven RainAI** is ready for deployment and scaling into production environments. 🚀
+
+---
+
+### Final Notes:  
+1. The image is embedded directly in the **Key Results** section.  
+2. The repository link is corrected to your GitHub: **[RAG-Driven RainAI](https://github.com/abdulghaffaransari/RAG-Driven-RainAI)**.
+
+Let me know if you need any further refinements! 🚀
