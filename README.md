@@ -2,177 +2,164 @@
 ---
 
 # **RAG-Driven RainAI**  
-## **A Cutting-Edge Rainfall Prediction and Retrieval-Augmented Generation System**
-
-### **Overview**  
-**RAG-Driven RainAI** is a state-of-the-art **Retrieval-Augmented Generation (RAG)** system that leverages **Machine Learning (ML)** models and advanced **Natural Language Processing (NLP)** techniques to:  
-1. Predict **rainfall amounts** using historical weather data.  
-2. Extract, retrieve, and answer questions from large volumes of research documents, such as PDFs, with high precision.  
-
-The system integrates **machine learning regressors**, modern vector search tools, and language models to deliver intelligent, contextual answers and precise rainfall predictions.
+### **A Cutting-Edge Rainfall Prediction and Retrieval-Augmented Generation (RAG) System**  
 
 ---
 
-## **Key Features**  
-- **Machine Learning-Based Rainfall Prediction**:  
-   - Implements **10 supervised regression models** to predict the rainfall amount (in mm) based on historical weather datasets.  
-   - Delivers accurate performance metrics using **Random Forest Regressor** as the top-performing model.
-
-- **Retrieval-Augmented Generation (RAG)**:  
-   - Combines **information retrieval** from PDF documents and **AI-based generation** to provide concise, accurate answers.  
-   - Employs vector embeddings for semantic search using **FAISS** and **Amazon Bedrock** services.
-
-- **Document Querying System**:  
-   - Ability to upload PDF files, vectorize the content, and retrieve answers to user queries.
-
-- **End-to-End Integration with Streamlit**:  
-   - User-friendly web interface for seamless interaction with the model and document retrieval system.
+## **Table of Contents**  
+1. [Overview](#overview)  
+2. [Key Features](#key-features)  
+3. [Technologies Used](#technologies-used)  
+4. [System Workflow](#system-workflow)  
+5. [How to Set Up](#how-to-set-up)  
+6. [Results](#results)  
+7. [Future Enhancements](#future-enhancements)  
+8. [Why RAG-Driven RainAI?](#why-rag-driven-rainai)  
+9. [About the Developer](#about-the-developer)  
 
 ---
 
-## **Technologies Used**  
-This project leverages cutting-edge tools and frameworks to provide an efficient and reliable solution:
+## **1. Overview**  
 
-### **1. Language Model Integration**  
-- **Amazon Bedrock**:  
-   - Used for LLM (Language Model) integration via **Amazon Titan** models.  
-   - Ensures scalability, high performance, and secure cloud-based inference.  
+**RAG-Driven RainAI** is a **state-of-the-art Retrieval-Augmented Generation (RAG) system** powered by **Amazon Bedrock**, enabling intelligent question-answering and rainfall prediction.  
 
-### **2. Embedding and Vector Search**  
-- **FAISS (Facebook AI Similarity Search)**:  
-   - Enables fast, scalable, and efficient similarity search for document embeddings.  
-- **Amazon Titan Embeddings**:  
-   - Converts textual data into dense vector representations for semantic retrieval.  
+- **Rainfall Prediction**: Predict the amount of rainfall using historical weather datasets and advanced **machine learning models**.  
+- **Document-Based QA**: Query large PDF documents to get intelligent answers, combining **vector-based retrieval** with **AI-powered generation**.  
 
-### **3. Machine Learning Models**  
-- **Regression Models Used**:  
-   - Random Forest Regressor  
-   - Linear Regression  
-   - Ridge Regression  
-   - Lasso Regression  
-   - XGBoost  
-   - Gradient Boosting Regressor  
-   - Support Vector Regressor (SVR)  
-   - Decision Tree Regressor  
-   - K-Nearest Neighbors (KNN) Regressor  
-   - Extra Trees Regressor  
+---
 
-- **Evaluation Metrics**:  
+## **2. Key Features**  
+
+### 🌧️ **Rainfall Prediction**  
+- Predict rainfall amounts (in mm) using 10 advanced machine learning regression models.  
+- **Random Forest Regressor** achieved the highest accuracy, evaluated using:  
    - R² Score  
    - Mean Absolute Error (MAE)  
-   - Mean Squared Error (MSE)  
-   - Root Mean Squared Error (RMSE)
+   - Root Mean Squared Error (RMSE).  
 
-### **4. Document Processing**  
-- **PyPDF**: For loading and processing PDF files efficiently.  
-- **LangChain**: Framework for integrating language models, building chains, and enhancing retrieval pipelines.
+### 📄 **Document Querying System**  
+- Upload **PDF documents** containing research or weather data.  
+- Process PDFs to extract answers to user questions.  
 
-### **5. Web Interface**  
-- **Streamlit**:  
-   - Front-end framework for creating an interactive user interface.  
-   - Enables real-time question-answering and visualization.
+### 🚀 **AI-Powered Answers**  
+- Uses **Amazon Titan LLM** (via Amazon Bedrock) to generate contextual and accurate answers.  
 
-### **6. Backend Services**  
-- **Boto3**: AWS SDK for Python to connect and invoke Amazon Bedrock APIs.
+### 🖥️ **Interactive Web Interface**  
+- Powered by **Streamlit** for real-time interaction.  
+- User-friendly features to store vectors and query documents seamlessly.  
 
 ---
 
-## **System Architecture**  
-1. **Document Processing Pipeline**:  
-   - PDF files are loaded and split into chunks using **LangChain's RecursiveCharacterTextSplitter**.  
-   - Text embeddings are generated using **Amazon Titan Embeddings**.  
-   - Chunks are stored and indexed using **FAISS** for semantic retrieval.
+## **3. Technologies Used**  
 
-2. **RAG Pipeline**:  
-   - User queries are vectorized and matched against stored document embeddings.  
-   - Top matching contexts are fed into the **Amazon Bedrock LLM** to generate accurate answers.
-
-3. **Machine Learning Pipeline**:  
-   - Historical weather datasets are preprocessed and fed into **10 regression models**.  
-   - Models are evaluated, and predictions are provided using the best-performing regressor (**Random Forest**).
-
-4. **Web Interface**:  
-   - Streamlit provides an intuitive interface for uploading PDFs, generating vectors, querying documents, and visualizing predictions.
+| **Category**               | **Tools/Technologies**                  |  
+|----------------------------|-----------------------------------------|  
+| **Language Models**        | Amazon Bedrock (Titan Embeddings, Titan Text) |  
+| **Vector Search**          | FAISS (Facebook AI Similarity Search)  |  
+| **Document Processing**    | PyPDF, LangChain                       |  
+| **Web Framework**          | Streamlit                              |  
+| **Backend & Cloud Services** | Boto3 (AWS SDK for Python)            |  
+| **Machine Learning Models** | Random Forest, XGBoost, Linear Regression |  
 
 ---
 
-## **How to Use**  
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/abdulghaffaransari/RAG-Driven-RainAI.git
-   cd RAG-Driven-RainAI
-   ```
+## **4. System Workflow**  
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The system consists of two core pipelines:  
 
-3. Run the Streamlit application:
-   ```bash
-   streamlit run main.py
-   ```
+### **A. Rainfall Prediction Pipeline**  
+1. **Data Preprocessing**: Historical weather datasets are loaded and cleaned.  
+2. **Model Training**: 10 supervised regression models are applied to predict rainfall amounts.  
+3. **Model Evaluation**: Performance is evaluated using R² Score, MAE, and RMSE.  
+4. **Prediction**: The best model (**Random Forest Regressor**) predicts rainfall values.  
 
-4. Use the sidebar options:  
-   - **Store Vector**: Upload and process PDF files.  
-   - **Send**: Ask questions based on the uploaded PDFs.  
-   - Get intelligent responses from the RAG system.
-
----
-
-## **Key Results**  
-- **Best Model**: Random Forest Regressor  
-   - **R² Score**: 0.8699  
-   - **MAE**: 0.1944  
-   - **MSE**: 0.1263  
-   - **RMSE**: 0.3554  
-
-### **Visual Representation of Results**  
-Below is a visualization of the results obtained from the rainfall prediction model:  
-
-![Predicted Results](https://github.com/abdulghaffaransari/RAG-Driven-RainAI/blob/main/Results/result%201.png)
+### **B. Retrieval-Augmented Generation (RAG) Pipeline**  
+1. **Document Ingestion**: PDFs are loaded using **PyPDF** and split into chunks using **LangChain's RecursiveCharacterTextSplitter**.  
+2. **Embedding Creation**:  
+   - Chunks are converted into embeddings using **Amazon Titan Embeddings**.  
+   - Stored and indexed in a **FAISS** vector database.  
+3. **Question-Answering**:  
+   - User inputs a query.  
+   - Similar chunks are retrieved using FAISS.  
+   - The retrieved context is passed to **Amazon Titan LLM** to generate an accurate answer.  
+4. **Output**: The final answer is displayed to the user.  
 
 ---
 
-## **Future Enhancements**  
-- Integrate **real-time weather APIs** for live rainfall prediction.  
-- Add advanced **explainability techniques** (SHAP, LIME) for ML models.  
-- Support **multiple file formats** beyond PDFs (CSV, DOCX).  
-- Deploy the system using **AWS Lambda** or **Docker** for scalability.
+## **5. How to Set Up**  
+
+### **Step 1: Clone the Repository**  
+```bash
+git clone https://github.com/abdulghaffaransari/RAG-Driven-RainAI.git
+cd RAG-Driven-RainAI
+```
+
+### **Step 2: Install Dependencies**  
+Ensure all required libraries are installed:  
+```bash
+pip install -r requirements.txt
+```
+
+### **Step 3: Run the Application**  
+Launch the Streamlit web interface:  
+```bash
+streamlit run main.py
+```
+
+### **Step 4: Use the Application**  
+1. **Upload PDF Files**: Click "Store Vector" in the sidebar to process PDF documents.  
+2. **Ask a Question**: Input your query in the text box and click "Send".  
+3. **Get Predictions**: View AI-generated answers and rainfall predictions.  
 
 ---
 
-## **Why RAG-Driven RainAI?**  
-- Combines **regression analysis** for rainfall prediction with **AI-based document retrieval** for enhanced insights.  
-- Built using **scalable and production-grade technologies**.  
-- Provides actionable insights for **agriculture, disaster management, and research domains**.
+## **6. Results**  
+
+### **Rainfall Prediction Results**  
+The **Random Forest Regressor** achieved:  
+- **R² Score**: 0.8699  
+- **MAE**: 0.1944  
+- **MSE**: 0.1263  
+- **RMSE**: 0.3554  
+
+### **Visual Results**  
+The following visualization demonstrates the system's performance:  
+
+![Predicted Results](https://github.com/abdulghaffaransari/RAG-Driven-RainAI/blob/main/Results/result%201.png)  
 
 ---
 
-## **About the Developer**  
+## **7. Future Enhancements**  
+1. **Real-Time Weather Integration**: Add live APIs for real-time rainfall prediction.  
+2. **Multi-Format Support**: Process additional file formats such as CSV, DOCX, and JSON.  
+3. **Explainability**: Integrate tools like **SHAP** or **LIME** for model explainability.  
+4. **Scalability**: Deploy the system using **AWS Lambda** or **Docker** for serverless scaling.  
+
+---
+
+## **8. Why RAG-Driven RainAI?**  
+- Combines **machine learning**, **semantic search**, and **AI generation** for intelligent solutions.  
+- Provides actionable insights for **agriculture, weather forecasting**, and **research industries**.  
+- Built with scalable, production-grade technologies.  
+
+---
+
+## **9. About the Developer**  
+
 **Abdul Ghaffar Ansari**  
 - **AI & ML Engineer**  
-- Expertise in Machine Learning, Natural Language Processing, and Cloud Services (AWS).  
-- Passionate about solving real-world problems using data-driven solutions.  
+- Expertise in Machine Learning, NLP, and AWS Cloud Services.  
+- Passionate about solving real-world problems through data-driven AI solutions.  
 
 **Contact Information**:  
-- **Email**: abdulghaffaransari9@gmail.com  
-- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/abdulghaffaransari/)  
-- **GitHub**: [GitHub](https://github.com/abdulghaffaransari)  
+- **Email**: [abdulghaffaransari9@gmail.com](mailto:abdulghaffaransari9@gmail.com)  
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/abdulghaffaransari/)  
+- **GitHub**: [GitHub Profile](https://github.com/abdulghaffaransari)  
 
 ---
 
 ## **Conclusion**  
-**RAG-Driven RainAI** is an innovative project at the intersection of **machine learning**, **retrieval-augmented generation**, and **rainfall prediction**. This system not only provides accurate predictions but also enhances document-based insights, making it ideal for **researchers, farmers, and decision-makers**.
+
+**RAG-Driven RainAI** represents an innovative approach to solving critical challenges in rainfall prediction and intelligent document querying. Combining the power of **machine learning** with **retrieval-augmented generation**, this system provides precise and actionable insights, positioning itself as an impactful solution for **weather analysis** and **context-aware AI systems**.
 
 ---
-
-With this impressive technical solution, **RAG-Driven RainAI** is ready for deployment and scaling into production environments. 🚀
-
----
-
-### Final Notes:  
-1. The image is embedded directly in the **Key Results** section.  
-2. The repository link is corrected to your GitHub: **[RAG-Driven RainAI](https://github.com/abdulghaffaransari/RAG-Driven-RainAI)**.
-
-Let me know if you need any further refinements! 🚀
